@@ -1,6 +1,7 @@
 
 package com.pacoportela.elco;
 
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -147,23 +148,33 @@ public class TextFieldConPosicion extends JTextField
             JPopupMenu menu = new JPopupMenu();
             ImageIcon iconoPapelera = getImagen("Recursos/papelera.png");
             ImageIcon iconoEliminar = getImagen("Recursos/eliminar.png");
-            //creamos el item del menu con un nombre y una imagen
-            JMenuItem borrar = new JMenuItem("Borrar texto", iconoPapelera);
-            borrar.addActionListener((ActionEvent ae) -> {
-                borrarTexto(me);
+            //creamos menu item para borrar el texto de un panel con un nombre
+            // y una imagen
+            JMenuItem borrarUno = new JMenuItem("Borrar uno", iconoPapelera);
+            borrarUno.addActionListener((ActionEvent ae) -> {
+                borrarTextoUno(me);
             });
-            // el otro item del menu
+            // menu item para eliminar el texto de todos los paneles
+            JMenuItem borrarTodos = new JMenuItem
+                ("Borrar todos", iconoPapelera);
+            borrarTodos.addActionListener((ActionEvent ae)->{
+                borrarTextoTodos(panelPadre);
+            });
+            // menu item para eliminar el panel
             JMenuItem eliminar = new JMenuItem("Eliminar panel", iconoEliminar);
             eliminar.addActionListener((ActionEvent ae) -> {
                 eliminarPanel(me);
             });
-            menu.add(borrar);
+            // añadimos los menu items al menu contextual
+            menu.add(borrarUno);
+            menu.add(borrarTodos);
             /* Si el panel padre es el panel en blanco permitimos borrar el
             PanelOferta; añadimos en el popup menu el item eliminar.
              */
             if (panelPadre.getName().equals("panelBlanco")) {
                 menu.add(eliminar);
             }
+            // mostramos el menu contextual en el componente que lo origino.
             menu.show(me.getComponent(), me.getX(), me.getY());
         }
     }
@@ -173,10 +184,22 @@ public class TextFieldConPosicion extends JTextField
      *
      * @param me el objeto que contiene la informacion sobre el evento generado
      */
-    private void borrarTexto(MouseEvent me) {
+    private void borrarTextoUno(MouseEvent me) {
         TextFieldConPosicion tf = (TextFieldConPosicion) me.getSource();
         PanelOferta p = (PanelOferta) tf.getParent();
         p.borrarCamposTexto();
+    }
+    
+    /**
+     * Metodo que borra el texto de todos 
+     * @param me el objeto que contiene la informacion sobre el evento generado
+     */
+    private void borrarTextoTodos(JPanel panelPadre){
+        Component[] comps = panelPadre.getComponents();
+        for(Component c: comps){
+            PanelOferta p = (PanelOferta)c;
+            p.borrarCamposTexto();
+        }
     }
 
     /**
