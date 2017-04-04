@@ -19,6 +19,8 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.MediaSizeName;
@@ -406,7 +408,6 @@ public class CarteleriaOfertas extends javax.swing.JFrame
             }
         });
 
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1020, 750));
         jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -552,12 +553,11 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         jTabbedPane1.addTab("Listas2", panelListas2);
 
         panelListaPersonal.setBackground(new java.awt.Color(255, 255, 255));
-        panelListaPersonal.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Diseñe aquí su propio panel de listas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
         panelListaPersonal.setLayout(new javax.swing.BoxLayout(panelListaPersonal, javax.swing.BoxLayout.LINE_AXIS));
         jTabbedPane1.addTab("ListaPersonal", panelListaPersonal);
 
         panelPadre24.setBackground(new java.awt.Color(255, 255, 255));
-        panelPadre24.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 24 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panelPadre24.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 24 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         panelPadre24.setName("panelPadre24"); // NOI18N
         panelPadre24.setPreferredSize(new java.awt.Dimension(950, 650));
 
@@ -575,14 +575,14 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         panel9_12.setPreferredSize(new java.awt.Dimension(1020, 700));
 
         panel9.setBackground(new java.awt.Color(255, 255, 255));
-        panel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 9 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 9 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         panel9.setName("panel9"); // NOI18N
         panel9.setPreferredSize(new java.awt.Dimension(485, 600));
         panel9.setLayout(new java.awt.GridLayout(3, 3, 1, 1));
         panel9_12.add(panel9);
 
         panel12.setBackground(new java.awt.Color(255, 255, 255));
-        panel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 12 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 12 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         panel12.setName("panel12"); // NOI18N
         panel12.setOpaque(false);
         panel12.setPreferredSize(new java.awt.Dimension(485, 600));
@@ -591,20 +591,18 @@ public class CarteleriaOfertas extends javax.swing.JFrame
 
         jTabbedPane1.addTab("Panel 9-12", panel9_12);
 
-        panelListadoPaneles.setBackground(new java.awt.Color(255, 255, 255));
-        panelListadoPaneles.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Listado de los productos de los paneles", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panelListadoPaneles.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Listado de los productos de los paneles", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         panelListadoPaneles.setName("panelListadoPaneles"); // NOI18N
 
         textAreaListadoPaneles.setColumns(20);
         textAreaListadoPaneles.setRows(5);
-        textAreaListadoPaneles.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         panelListadoPaneles.setViewportView(textAreaListadoPaneles);
 
         jTabbedPane1.addTab("Listado paneles", panelListadoPaneles);
         panelListadoPaneles.getAccessibleContext().setAccessibleName("panelListado");
 
         panelBlanco.setBackground(new java.awt.Color(255, 255, 255));
-        panelBlanco.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Diseñe aquí su propio panel de ofertas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panelBlanco.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Diseñe aquí su propio panel de ofertas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         panelBlanco.setName("panelBlanco"); // NOI18N
         panelBlanco.setLayout(null);
         jTabbedPane1.addTab("Panel blanco", panelBlanco);
