@@ -107,7 +107,8 @@ public class TextAreaTransferHandler extends TransferHandler {
         */
         for(int i = 0; i < datos.length; i++){
             if(i == 1){
-                nombre = "@ " + datos[i] + " @ ";
+                //nombre = "@ " + datos[i] + " @ ";
+                nombre = datos[i] + " ";
             }
             else if(i == datos.length - 2 ||i == datos.length - 1){
                 precio = precio + datos[i] + " ";
@@ -117,6 +118,10 @@ public class TextAreaTransferHandler extends TransferHandler {
                 descripcion += datos[i] + " ";
             }
         }
+        descripcion = descripcion.toLowerCase();
+        char[] caracteres = descripcion.toCharArray();
+        caracteres[0] = Character.toUpperCase(caracteres[0]);
+        descripcion = new String(caracteres);
         return descripcion + nombre + precio;
     }
 }

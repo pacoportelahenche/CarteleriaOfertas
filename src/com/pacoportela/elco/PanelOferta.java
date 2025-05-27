@@ -1,6 +1,7 @@
 
 package com.pacoportela.elco;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -144,5 +145,18 @@ public class PanelOferta extends PanelAmpliable{
         this.textoAbajo.setText("");
         this.textoArriba.setText("");
         this.textoMedio.setText("");
+    }
+    
+    public void borrarBordes(){
+        Color colorFondo = this.getBackground();
+        this.textoArriba.eliminarBorde(colorFondo);
+        this.textoMedio.eliminarBorde(colorFondo);
+        this.textoAbajo.eliminarBorde(colorFondo);
+    }
+    
+    public void ponerBordes(){
+        this.textoArriba.ponerBorde();
+        this.textoMedio.ponerBorde();
+        this.textoAbajo.ponerBorde();
     }
 }

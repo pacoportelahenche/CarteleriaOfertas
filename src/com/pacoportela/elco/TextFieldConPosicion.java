@@ -1,6 +1,7 @@
 
 package com.pacoportela.elco;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.Image;
@@ -12,6 +13,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.net.URL;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -78,6 +80,14 @@ public class TextFieldConPosicion extends JTextField
     public void setPosicion(int pos) {
         this.posicion = pos;
     }
+    
+    public void eliminarBorde(Color color){
+        this.setBorder(BorderFactory.createLineBorder(color));
+    }
+    
+    public void ponerBorde(){
+        this.setBorder(BorderFactory.createLineBorder(Color.black));
+    }
 
     /**
      * Metodo que se ejecuta cuando se mueve la rueda del mouse. Controlamos en
@@ -107,7 +117,7 @@ public class TextFieldConPosicion extends JTextField
      */
     @Override
     public void focusGained(FocusEvent fe) {
-        this.selectAll();
+        //this.selectAll();
     }
 
     @Override

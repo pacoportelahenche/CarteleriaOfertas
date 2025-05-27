@@ -244,8 +244,10 @@ public class CarteleriaOfertas extends javax.swing.JFrame
      */
     private File buscarDatos() {
         File ficheroDatos = null;
-        JFileChooser fc = new JFileChooser
-            ("\\\\ALMACEN\\Archivos de programa\\OfertasElco\\datos");
+        JFileChooser fc = new JFileChooser(this.RUTA_DATOS);
+            //("\\\\ALMACEN\\Archivos de programa\\OfertasElco\\datos")
+            /*("\\\\Terminal3\\Program files (x86)\\Programas Paco\\"
+             + "OfertasElco\\datos");*/
         if (fc.showOpenDialog(this.getContentPane())
                 == JFileChooser.APPROVE_OPTION) {
             ficheroDatos = fc.getSelectedFile();
@@ -340,7 +342,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
      */
     private static void crearPanelAviso(String textoAviso) {
         JOptionPane.showMessageDialog(null, textoAviso,
-                "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                "Información", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**
@@ -418,12 +420,11 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         panelListas1.setName("panelListas1"); // NOI18N
 
         scrollPaneAlimentacion1.setBackground(new java.awt.Color(255, 255, 255));
-        scrollPaneAlimentacion1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Alimentación 25 lineas", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        scrollPaneAlimentacion1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Alimentación 25 lineas", 3, 0));
 
         textAreaAlimentacion1.setColumns(20);
         textAreaAlimentacion1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         textAreaAlimentacion1.setRows(5);
-        textAreaAlimentacion1.setDragEnabled(true);
         textAreaAlimentacion1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 textAreasMouseRelease(evt);
@@ -432,11 +433,12 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         scrollPaneAlimentacion1.setViewportView(textAreaAlimentacion1);
 
         scrollPaneBebidas1.setBackground(new java.awt.Color(255, 255, 255));
-        scrollPaneBebidas1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Bebidas 10 lineas", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        scrollPaneBebidas1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Bebidas 10 lineas", 3, 0));
 
         textAreaBebidas1.setColumns(20);
         textAreaBebidas1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         textAreaBebidas1.setRows(5);
+        textAreaBebidas1.setDragEnabled(true);
         textAreaBebidas1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 textAreasMouseRelease(evt);
@@ -445,11 +447,12 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         scrollPaneBebidas1.setViewportView(textAreaBebidas1);
 
         scrollPaneDrogueria1.setBackground(new java.awt.Color(255, 255, 255));
-        scrollPaneDrogueria1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Droguería 13 lineas", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        scrollPaneDrogueria1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Droguería 13 lineas", 3, 0));
 
         textAreaDrogueria1.setColumns(20);
         textAreaDrogueria1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         textAreaDrogueria1.setRows(5);
+        textAreaDrogueria1.setDragEnabled(true);
         textAreaDrogueria1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 textAreasMouseRelease(evt);
@@ -487,7 +490,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         panelListas2.setBackground(new java.awt.Color(255, 255, 255));
 
         scrollPaneBebidas2.setBackground(new java.awt.Color(255, 255, 255));
-        scrollPaneBebidas2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Bebidas", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        scrollPaneBebidas2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Bebidas", 3, 0));
 
         textAreaBebidas2.setColumns(20);
         textAreaBebidas2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -500,7 +503,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         scrollPaneBebidas2.setViewportView(textAreaBebidas2);
 
         scrollPaneAlimentacion2.setBackground(new java.awt.Color(255, 255, 255));
-        scrollPaneAlimentacion2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Alimentación", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        scrollPaneAlimentacion2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Alimentación", 3, 0));
 
         textAreaAlimentacion2.setColumns(20);
         textAreaAlimentacion2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -513,7 +516,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         scrollPaneAlimentacion2.setViewportView(textAreaAlimentacion2);
 
         scrollPaneDrogueria2.setBackground(new java.awt.Color(255, 255, 255));
-        scrollPaneDrogueria2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Droguería", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        scrollPaneDrogueria2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Droguería", 3, 0));
 
         textAreaDrogueria2.setColumns(20);
         textAreaDrogueria2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -552,12 +555,12 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         jTabbedPane1.addTab("Listas2", panelListas2);
 
         panelListaPersonal.setBackground(new java.awt.Color(255, 255, 255));
-        panelListaPersonal.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Diseñe aquí su propio panel de listas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panelListaPersonal.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Diseñe aquí su propio panel de listas", 2, 0));
         panelListaPersonal.setLayout(new javax.swing.BoxLayout(panelListaPersonal, javax.swing.BoxLayout.LINE_AXIS));
         jTabbedPane1.addTab("ListaPersonal", panelListaPersonal);
 
         panelPadre24.setBackground(new java.awt.Color(255, 255, 255));
-        panelPadre24.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 24 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panelPadre24.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 24 cuadros", 2, 0));
         panelPadre24.setName("panelPadre24"); // NOI18N
         panelPadre24.setPreferredSize(new java.awt.Dimension(950, 650));
 
@@ -575,14 +578,14 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         panel9_12.setPreferredSize(new java.awt.Dimension(1020, 700));
 
         panel9.setBackground(new java.awt.Color(255, 255, 255));
-        panel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 9 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 9 cuadros", 2, 0));
         panel9.setName("panel9"); // NOI18N
         panel9.setPreferredSize(new java.awt.Dimension(485, 600));
         panel9.setLayout(new java.awt.GridLayout(3, 3, 1, 1));
         panel9_12.add(panel9);
 
         panel12.setBackground(new java.awt.Color(255, 255, 255));
-        panel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 12 cuadros", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Panel 12 cuadros", 2, 0));
         panel12.setName("panel12"); // NOI18N
         panel12.setOpaque(false);
         panel12.setPreferredSize(new java.awt.Dimension(485, 600));
@@ -592,7 +595,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         jTabbedPane1.addTab("Panel 9-12", panel9_12);
 
         panelListadoPaneles.setBackground(new java.awt.Color(255, 255, 255));
-        panelListadoPaneles.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Listado de los productos de los paneles", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panelListadoPaneles.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Listado de los productos de los paneles", 2, 0));
         panelListadoPaneles.setName("panelListadoPaneles"); // NOI18N
 
         textAreaListadoPaneles.setColumns(20);
@@ -604,14 +607,14 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         panelListadoPaneles.getAccessibleContext().setAccessibleName("panelListado");
 
         panelBlanco.setBackground(new java.awt.Color(255, 255, 255));
-        panelBlanco.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Diseñe aquí su propio panel de ofertas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 0))); // NOI18N
+        panelBlanco.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Diseñe aquí su propio panel de ofertas", 2, 0));
         panelBlanco.setName("panelBlanco"); // NOI18N
         panelBlanco.setLayout(null);
         jTabbedPane1.addTab("Panel blanco", panelBlanco);
 
         menuFichero.setText("Fichero");
 
-        menuItemCerrar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemCerrar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemCerrar.setText("Salir");
         menuItemCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -624,7 +627,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
 
         menuDatos.setText("Datos");
 
-        menuItemActual.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemActual.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemActual.setText("Actual");
         menuItemActual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -633,7 +636,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         });
         menuDatos.add(menuItemActual);
 
-        menuItemCargarDatos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemCargarDatos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemCargarDatos.setText("Cargar");
         menuItemCargarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -646,7 +649,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
 
         menuCrear.setText("Crear");
 
-        menuItemCrearPanel.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemCrearPanel.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemCrearPanel.setText("Nuevo Panel");
         menuItemCrearPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -667,7 +670,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
 
         menuImprimir.setText("Imprimir");
 
-        menuItemImprimir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemImprimir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemImprimir.setText("Imprimir");
         menuItemImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -680,7 +683,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
 
         menuAyuda.setText("Ayuda");
 
-        menuItemAyuda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemAyuda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemAyuda.setText("Ayuda");
         menuItemAyuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -747,6 +750,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
     private JPanel rellenarPanel(JPanel p, int numPaneles) {
         for (int i = 0; i < numPaneles; i++) {
             PanelOferta po = new PanelOferta();
+            po.borrarBordes();
             po.inmovilizarPanel();
             p.add(po);
         }
@@ -772,25 +776,6 @@ public class CarteleriaOfertas extends javax.swing.JFrame
     }//GEN-LAST:event_menuItemNuevoPanelActionPerformed
 
     /**
-     * Metodo invocado cuando pulsamos el menu item Imprimir.
-     *
-     * @param evt el objeto que contiene la informacion de este evento.
-     */
-    private void menuItemImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemImprimirActionPerformed
-        try {
-            PrinterJob job = PrinterJob.getPrinterJob();
-            PrintRequestAttributeSet aset = new HashPrintRequestAttributeSet();
-            aset.add(OrientationRequested.LANDSCAPE);
-            aset.add(MediaSizeName.ISO_A4);
-            job.setPrintable(this);
-            job.printDialog();
-            job.print(aset);
-        } catch (PrinterException ex) {
-            crearPanelAviso(ex.toString());
-        }
-    }//GEN-LAST:event_menuItemImprimirActionPerformed
-
-    /**
      * Metodo invocado cuando pulsamos sobre las pestañas del tabbed pane.
      *
      * @param evt el objeto que contiene la informacion de este evento.
@@ -809,7 +794,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
 
     /**
      * Metodo invocado cuando se cierra el JFrame que contiene la aplicacion
-     * (cuando salimos del programa). Invoca al metodo salir().
+     * (cuando salimos del programa). Llama al metodo salir().
      *
      * @param evt el objeto que contiene la informacion de este evento.
      */
@@ -837,14 +822,13 @@ public class CarteleriaOfertas extends javax.swing.JFrame
      */
     private void menuItemActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemActualActionPerformed
 
-        String path = "\\\\ALMACEN\\Archivos de programa\\OfertasElco\\datos\\";
-        File fic = new File(path + "ofertaActual.txt");
+        File fic = new File(this.RUTA_DATOS + "\\" + "ofertaActual.txt");
         String fechaOferta;
         fechaOferta = IOFichero.ficheroAString
             (fic, Charset.forName("UTF-16"));
         
         fechaOferta = fechaOferta.trim();
-        File ficOferta = new File(path + fechaOferta);
+        File ficOferta = new File(this.RUTA_DATOS + "\\" + fechaOferta);
         try {
             if(this.getObjetoXML(ficOferta)){
                 this.crearVentanaListaDatos();
@@ -872,6 +856,25 @@ public class CarteleriaOfertas extends javax.swing.JFrame
         panelContenedor.add(res);
         panelContenedor.getParent().revalidate();
     }//GEN-LAST:event_menuItemNuevaAreaTextoActionPerformed
+
+    /**
+     * Metodo invocado cuando pulsamos el menu item Imprimir.
+     *
+     * @param evt el objeto que contiene la informacion de este evento.
+     */
+    private void menuItemImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemImprimirActionPerformed
+        try {
+            PrinterJob job = PrinterJob.getPrinterJob();
+            PrintRequestAttributeSet aset = new HashPrintRequestAttributeSet();
+            aset.add(OrientationRequested.LANDSCAPE);
+            aset.add(MediaSizeName.ISO_A4);
+            job.setPrintable(this);
+            job.printDialog();
+            job.print(aset);
+        } catch (PrinterException ex) {
+            crearPanelAviso(ex.toString());
+        }
+    }//GEN-LAST:event_menuItemImprimirActionPerformed
 
     /**
      * Este metodo crea un JPopupMenu que contiene un JMenuItem llamado borrar.
@@ -1130,4 +1133,7 @@ public class CarteleriaOfertas extends javax.swing.JFrame
 
     private ImageIcon icono;
     private PanelContenedor panelContenedor;
+    private final String RUTA_DATOS = 
+            "\\\\Terminal3\\Users\\"
+            + "Public\\" + "OfertasElco\\datos";
 }
